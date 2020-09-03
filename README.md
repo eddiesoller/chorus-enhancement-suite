@@ -3,9 +3,9 @@ A suite of modules that enhances your chorus.fm browsing experience
 
 # Current Features
 - Star icon on posts by starred users
+- Heart icon on posts with 4+ likes
 
 # Possible Features
-- Heart icon on posts with 4+ likes
 - Customizable post likes threshold
 - Identify posts liked by starred users
 - Keyboard shortcuts to hop between flagged posts
