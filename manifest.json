@@ -1,0 +1,16 @@
+{
+    "name": "Chorus Enhancement Suite",
+    "version": "0.1",
+    "description": "A suite of modules that enhances your chorus.fm browsing experience",
+    "permissions": [
+        "storage",
+        "tabs",
+        "*://*/*",
+        "declarativeContent"
+    ],
+    "background": {
+        "scripts": ["scripts/background.js"],
+        "persistent": false
+    },
+    "manifest_version": 2
+}
