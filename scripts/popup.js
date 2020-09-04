@@ -3,14 +3,14 @@ const usernameInput = document.getElementById("username");
 const addBtn = document.getElementById("add");
 const starredUsersDiv = document.getElementById("starredUsers");
 
-chrome.storage.sync.get("starredUsers", function(data) {
+chrome.storage.sync.get("starredUsers", data => {
     if (data.starredUsers) {
         starredUsers = data.starredUsers;
         renderStarredUsers();
     }
 })
 
-addBtn.addEventListener("click", function() {
+addBtn.addEventListener("click", () => {
     if (usernameInput.value) {
         if (!starredUsers.map(user => user.toLowerCase()).includes(usernameInput.value.toLowerCase())) {
             starredUsers.push(usernameInput.value);
@@ -20,7 +20,7 @@ addBtn.addEventListener("click", function() {
     }
 })
 
-function saveStarredUsers() {
+const saveStarredUsers = () => {
     chrome.storage.sync.set({
         "starredUsers": starredUsers,
         function() {
@@ -29,17 +29,18 @@ function saveStarredUsers() {
     });
 }
 
-function renderStarredUsers() {
+
+const renderStarredUsers = () => {
     starredUsersDiv.innerHTML = "";
 
-    chrome.storage.sync.get("starredUsers", function(data) {
+    chrome.storage.sync.get("starredUsers", (data) => {
         for (let i = 0; i < data.starredUsers.length; i++) {
             const userDiv = document.createElement("div");
             userDiv.style = "user";
             const deleteBtn = document.createElement("button");
             deleteBtn.style = "deleteBtn";
             deleteBtn.innerText = "-";
-            deleteBtn.addEventListener("click", function() {
+            deleteBtn.addEventListener("click", () => {
                 starredUsers.remove(data.starredUsers[i]);
                 saveStarredUsers();
                 renderStarredUsers();
