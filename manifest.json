@@ -1,0 +1,31 @@
+{
+    "name": "Chorus Enhancement Suite",
+    "version": "0.1",
+    "description": "A suite of modules that enhances your chorus.fm browsing experience",
+    "permissions": [
+        "storage",
+        "tabs",
+        "*://*/*",
+        "declarativeContent"
+    ],
+    "background": {
+        "scripts": ["scripts/background.js"],
+        "persistent": false
+    },
+    "content_scripts": [{
+        "matches": [
+            "*://forum.chorus.fm/threads/*"
+        ],
+        "css": [
+            "styles/icons.css"
+        ],
+        "js": [
+            "scripts/jquery-3.5.1.min.js",
+            "scripts/contentScript.js"
+        ]
+    }],
+    "page_action": {
+        "default_popup": "popup.html"
+    },
+    "manifest_version": 2
+}
