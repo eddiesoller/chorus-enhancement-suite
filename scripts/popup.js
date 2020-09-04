@@ -54,14 +54,13 @@ const renderStarredUsers = () => {
     });
 }
 
-Array.prototype.remove = function() {
-    var what, a = arguments,
-        L = a.length,
-        ax;
-    while (L && this.length) {
-        what = a[--L];
-        while ((ax = this.indexOf(what)) !== -1) {
-            this.splice(ax, 1);
+Array.prototype.remove = function(...args) {
+    for (let i = 0; i < args.length; i++) {
+        let index = this.indexOf(args[i])
+
+        while (index !== -1) {
+            this.splice(index, 1)
+            index = this.indexOf(args[i])
         }
     }
     return this;
