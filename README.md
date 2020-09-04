@@ -11,8 +11,9 @@ A suite of modules that enhances your chorus.fm browsing experience
 - Keyboard shortcuts to hop between flagged posts
 
 # Installation Instructions
-- Clone this repo
-- Navigate to [Chrome extensions](chrome://extensions/)
-- Enable `Developer mode` at the upper right of the page
-- Click `Load unpacked`
-- Select the cloned repo directory
+- Clone or download this repo
+- Navigate to your Chrome browser extensions from the settings or at <chrome://extensions/>
+- Enable `Developer mode` at the upper right of the extensions page
+- Click `Load unpacked` at the upper left of the extensions page
+- Select the cloned/downloaded repo directory
+- With <https://forum.chorus.fm/> open, click on the extension icon to add/remove starred users
