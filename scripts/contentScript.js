@@ -1,7 +1,9 @@
 let starredUsers = [];
 
 chrome.storage.sync.get('starredUsers', function(data) {
-    starredUsers = data.starredUsers.map(user => user.toLowerCase());
+    if (data.starredUsers) {
+        starredUsers = data.starredUsers.map(user => user.toLowerCase());
+    }
 })
 
 $(document).ready(function() {
